@@ -53,6 +53,8 @@ flutter:
      - images/workout.jpg
      - images/listtext.png
      - images/settings.png
+     - images/back.png
+     - images/next.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
