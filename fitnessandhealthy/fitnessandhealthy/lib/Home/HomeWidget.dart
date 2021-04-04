@@ -95,10 +95,21 @@ class StateHomeWidget extends State<HomeWidget> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ScreenDetailHome(index: index,title: listHome[index].message,)));
+                      switch(index) {
+                        case 0 :
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ScreenDetailHome(index: index,title: listHome[index].message,list: listDetail1,)));
+                          break;
+                        case 1 :
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ScreenDetailHome(index: index,title: listHome[index].message,list: listDetail2,)));
+                          break;
+                      }
+
                     },
                     child: Container(
                       margin: EdgeInsets.all(20),

@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 class ScreenDetailHome extends StatefulWidget {
   final int index;
   final String title;
+  final List list;
 
-  const ScreenDetailHome({Key key, @required this.index, this.title});
+  const ScreenDetailHome({Key key, @required this.index, this.title,this.list});
 
   @override
   State<StatefulWidget> createState() {
@@ -56,14 +57,14 @@ class StateScreenDetailHome extends State<ScreenDetailHome> {
               Container(
                   margin: EdgeInsets.only(left: 30),
                   child: Text(
-                    '${listDetail.length} Bài tập',
+                    '${widget.list.length} Bài tập',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   )),
               SizedBox(height: 10,),
               Expanded(
                 child: Container(
                   child: ListView.builder(
-                      itemCount: listDetail.length,
+                      itemCount: widget.list.length,
                       itemBuilder: (context, index) {
                         return Container(
                           height: 100,
@@ -82,7 +83,7 @@ class StateScreenDetailHome extends State<ScreenDetailHome> {
                                 borderRadius: new BorderRadius.circular(10.0),
                                 child: Image(
                                   fit: BoxFit.fill,
-                                  image: AssetImage(listDetail[index].image),
+                                  image: AssetImage(widget.list[index].image),
                                   width: 60.0,
                                   height: 60.0,
                                 ),
@@ -90,9 +91,9 @@ class StateScreenDetailHome extends State<ScreenDetailHome> {
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(listDetail[index].title,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                                  Text(widget.list[index].title,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
                                   SizedBox(height: 10,),
-                                  Text(listDetail[index].time,style: TextStyle(fontSize: 15),),
+                                  Text(widget.list[index].time,style: TextStyle(fontSize: 15),),
                                 ],
                               ),
                               Container(
