@@ -109,7 +109,6 @@ class StateHomeWidget extends State<HomeWidget> {
                                   builder: (context) => ScreenDetailHome(index: index,title: listHome[index].message,list: listDetail2,)));
                           break;
                       }
-
                     },
                     child: Container(
                       margin: EdgeInsets.all(20),
@@ -118,7 +117,7 @@ class StateHomeWidget extends State<HomeWidget> {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(listHome[index].image),
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
